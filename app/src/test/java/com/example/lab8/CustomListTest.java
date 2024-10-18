@@ -2,6 +2,9 @@ package com.example.lab8;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 //import org.junit.Before;
@@ -9,6 +12,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class CustomListTest {
     private CustomList list;
@@ -43,5 +47,13 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
         list.deleteCity(city);
         assertEquals(list.getCount(), listSize);
+    }
+    @Test
+    public void countCitiesTest() {
+        list = MockCityList();
+        int cityCount = list.countCities();
+        City city = new City("London", "ON");
+        list.addCity(city);
+        assertEquals(list.getCount(), cityCount);
     }
 }
