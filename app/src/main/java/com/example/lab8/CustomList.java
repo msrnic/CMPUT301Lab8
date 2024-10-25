@@ -64,5 +64,10 @@ public class CustomList extends ArrayAdapter<City> {
         }
         return count;
     }
-
+    public ArrayList<City> getCities() {
+        return cities;
+    }
+    public int hasCity(City city) {
+        return 0;
+    }
 }
