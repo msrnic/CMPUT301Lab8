@@ -57,11 +57,11 @@ public class CustomListTest {
         assertEquals(list.getCount(), cityCount);
     }
     @Test
-    void testHasCity() {
+    public void testHasCity() {
         int newCount;
         list = MockCityList();
         City city = new City("London", "ON");
-        list.add(city);
+        list.addCity(city);
         assertTrue(list.getCities().contains(city));
         int oldCount = list.getCount();
         newCount = list.hasCity(city);
